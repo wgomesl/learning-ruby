@@ -1,10 +1,18 @@
 class Turma
 
-    attr_accessor :nome, :num_sala, :professor
+    attr_reader :alunos
+    attr_accessor :nome
 
-    def initialize(nome, num_sala, professor)
+    def initialize(nome)
         @nome = nome
-        @num_sala = num_sala
-        @professor = professor
+        @alunos = [ ]
     end
+
+    def adiciona_aluno(aluno)
+        alunos << aluno
+    end
+
+    private
+
+    attr_writer :alunos
 end
