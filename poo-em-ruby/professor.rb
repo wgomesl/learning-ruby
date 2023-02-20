@@ -1,9 +1,12 @@
-class Professor
+class Professor < Funcionario
+    attr_accessor :disciplina
 
-    attr_accessor :nome, :cod_funcionario
+    def initialize(nome, cod_funcionario, disciplina)
+        super(nome, cod_funcionario)
+        @disciplina = disciplina
+      end
 
-    def initialize(nome, cod_funcionario)
-        @nome = nome
-        @cod_funcionario = cod_funcionario
+      def imprime()
+        puts("Professor: #{nome} - Código: #{cod_funcionario} - Férias: #{ferias} - Disciplina: #{disciplina}")
     end
 end
